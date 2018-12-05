@@ -38,14 +38,14 @@ if( BUILD_WITH_TENSILE )
 
   set( Tensile_RUNTIME_LANGUAGE "HIP" )
   message( STATUS "AMDGPU_TARGETS=${AMDGPU_TARGETS}" )
-  #TensileCreateLibrary(
-  #    ${CMAKE_CURRENT_SOURCE_DIR}/blas3/Tensile/Logic/${Tensile_LOGIC}
-  #    ${Tensile_RUNTIME_LANGUAGE}
-  #    ${Tensile_MERGE_FILES}
-  #    ${Tensile_SHORT_FILENAMES}
-  #    ${Tensile_PRINT_DEBUG}
-  #    Tensile_ROOT ${Tensile_ROOT}
-  #)
+  TensileCreateLibrary(
+      ${CMAKE_CURRENT_SOURCE_DIR}/blas3/Tensile/Logic/${Tensile_LOGIC}
+      ${Tensile_RUNTIME_LANGUAGE}
+      ${Tensile_MERGE_FILES}
+      ${Tensile_SHORT_FILENAMES}
+      ${Tensile_PRINT_DEBUG}
+      Tensile_ROOT ${Tensile_ROOT}
+  )
 
   # Create a unique name for Tensile compiled for rocBLAS
   set_target_properties( Tensile PROPERTIES OUTPUT_NAME tensile-rocblas CXX_EXTENSIONS NO )
