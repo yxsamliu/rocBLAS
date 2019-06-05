@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Author: Kent Knox
 
-#set -x #echo on
+set -x #echo on
 
 # #################################################
 # helper functions
@@ -368,7 +368,7 @@ pushd .
   fi
   check_exit_code
 
-  make -j$(nproc) install
+  make -j$(nproc) VERBOSE=1 install
   check_exit_code
 
   # #################################################
