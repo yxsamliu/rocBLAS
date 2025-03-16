@@ -89,6 +89,8 @@ if (TARGET Threads::Threads)
   list( APPEND COMMON_LINK_LIBS "Threads::Threads")
 endif()
 
+list(APPEND COMMON_CXX_OPTIONS "-Wno-explicit-specialization-storage-class")
+
 message(STATUS "CLIENT COMMON CXX_OPTIONS: ${COMMON_CXX_OPTIONS}")
 message(STATUS "CLIENT COMMON LINK: ${COMMON_LINK_LIBS}")
 

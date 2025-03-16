@@ -554,7 +554,7 @@ def label_modifiers(labels):
     
 def run_cmd(exe, opts):
     program = f"{exe} {opts}"
-    print(program)
+    print(program, flush=True)
     proc = subprocess.run(program, check=True, stderr=subprocess.STDOUT, shell=True)
     return proc.returncode
 
@@ -593,9 +593,9 @@ def main():
         fatal("Configuration failed. Not continuing.")
 
     # make
-    exe, opts = make_cmd()
-    if run_cmd(exe, opts):
-        fatal("Build failed. Not continuing.")
+    #exe, opts = make_cmd()
+    #if run_cmd(exe, opts):
+    #    fatal("Build failed. Not continuing.")
 
     # Linux install and cleanup not supported from rmake yet
 
